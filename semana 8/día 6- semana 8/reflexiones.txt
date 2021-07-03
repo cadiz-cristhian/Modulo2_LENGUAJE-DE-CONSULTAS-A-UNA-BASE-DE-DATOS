@@ -1,0 +1,2 @@
+En esta clase vimos una explicación a los modelos y trabajé en completar el modelo de entidad relación y el relacional.
+Esto para poder avanzar a los proximos pasos.

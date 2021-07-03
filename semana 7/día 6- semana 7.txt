@@ -1,0 +1,2 @@
+En esta clase comenzó el modulo de base de datos. Estudié sobre los tipos de software para crear base de datos, el profesor nos indicó algunas 
+opciones disponibles entre las cuales destacan mysql, oracle y microsoft sql server.

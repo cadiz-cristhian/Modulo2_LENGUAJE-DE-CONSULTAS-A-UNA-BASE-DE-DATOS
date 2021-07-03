@@ -1,0 +1,3 @@
+En esta clase avancé con el modelo relacional tomando en cuenta
+el modelo entidad relacion, el cual no tuvo muchos cambios a lo que ya tenía en java.
+A la vez instalé mysql el cual ocuparé para crear las tablas 

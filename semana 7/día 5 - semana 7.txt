@@ -1,0 +1,2 @@
+En esta clase presenté la parte del proyecto de java el cual consistía en en mostrar todo el avance ( carta gantt , diagramas de flujo, 
+diagrama de clase y el programa en si). Mi programa lograba mostrar lo que requería aun así me faltó realizar las pruebas unitarias.

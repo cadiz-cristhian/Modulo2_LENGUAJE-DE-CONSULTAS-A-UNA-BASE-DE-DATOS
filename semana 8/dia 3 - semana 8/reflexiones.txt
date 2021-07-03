@@ -1,0 +1,2 @@
+En esta clase hice el modelo entidad relación, agregué las cardinalidades y relaciones.
+Revisé información para poder instalar oracle pero no tuve exito con la instalación.

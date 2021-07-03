@@ -1,0 +1,231 @@
+------------------------------------------------------------------------------------
+
+						CREAR BASE DE DATOS
+						
+------------------------------------------------------------------------------------
+
+CREATE SCHEMA `proyectoandroid` ;
+
+------------------------------------------------------------------------------------
+
+						CREAR TABLAS
+						
+------------------------------------------------------------------------------------
+
+---- crear tabla usuario ----
+
+CREATE TABLE `proyectoandroid`.`usuario` (
+  `idusuario` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `edad` INT NOT NULL,
+  `correo` VARCHAR(45) NOT NULL,
+  `contraseña` VARCHAR(10) NOT NULL,
+  PRIMARY KEY (`idusuario`),
+  UNIQUE INDEX `idusuario_UNIQUE` (`idusuario` ASC) VISIBLE,
+  UNIQUE INDEX `correo_UNIQUE` (`correo` ASC) VISIBLE);
+
+---- crear tabla pelicula -----
+
+CREATE TABLE `proyectoandroid`.`pelicula` (
+  `idpelicula` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(50) NOT NULL,
+  `fechaPublicacion` INT NULL,
+  `director` VARCHAR(45) NOT NULL,
+  `ranking` VARCHAR(10) NULL,
+  `genero` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`idpelicula`),
+  UNIQUE INDEX `idpelicula_UNIQUE` (`idpelicula` ASC) VISIBLE);
+
+--- crear tabla lista ---- 
+
+CREATE TABLE `lista` (
+  `idlista` int NOT NULL AUTO_INCREMENT,
+  `idusuario` int NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`idlista`),
+  UNIQUE KEY `idlista_UNIQUE` (`idlista`),
+  KEY `idusuario_idx` (`idusuario`),
+  CONSTRAINT `idusuario` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`)
+  
+  --- crear tabla cuestionario---- 
+  
+CREATE TABLE 'cuestionario' (
+	'idcuestionario' int NOT NULL AUTO_INCREMENT,
+	'idusuario' int NOT NULL,
+	'fecha' datetime NOT NULL,
+	PRIMARY KEY('idcuestionario'),
+	FOREIGN KEY('idusuario') REFERENCES usuario('idusuario')
+
+
+------------------------------------------------------------------------------------
+
+						POBLAR TABLAS
+						
+------------------------------------------------------------------------------------
+
+----poblar tabla usuario----
+
+INSERT INTO usuario (nombre,edad,correo,contraseña) VALUES ('don perro',3,'donperro@gmail.com','12345');
+INSERT INTO usuario (nombre,edad,correo,contraseña) VALUES ('cris',30,'ccadiz@suksa.cl','titin1234');
+
+----Poblar Tabla Pelicula----
+
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Psicosis","1960","Alfred Hitchcock",8.5,"Terror");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Midsommar","2019","Ari Aster",7.1,"Terror");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Alien, el octavo pasajero","1979","Ridley Scott",8.4,"Terror");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Tumbbad","2018","Rahi Anil Barve",8.3,"Terror");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("I saw the devil","2010","Jee-woon Kim",7.8,"Terror");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Get Out","2017","Jordan Peele ",7.7,"Terror");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("A nightmare on elm street","1984","Wes Craven",7.5,"Terror");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Texas Chainsaw Massacre","1974","Tobe Hooper",7.5,"Terror");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("EraserHead","1977","David Lynch",7.4,"Terror");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Hereditary","2018","Ari Aster",7.3,"Terror");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Parasite","2019","Bong Joon Ho",8.6,"Drama");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Gone Girl","2014","David Fincher",8.1,"Drama");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Portrait de la jeune fille en feu","2019","Céline Sciamma",8.1,"Drama");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Arrival","2016","David Villeneuve",7.9,"Drama");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("The Danish Girl","2015","Tom Hooper",7.1,"Drama");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Laurance Anyways","2012","Xavier Dolan",7.7,"Drama");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("The Room","2015","Lenny Abrahamson",8.1,"Drama");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Lady Bird","2017","Greta Gerwig",7.4,"Drama");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Edward Scissorhands","1990","Tim Burton",7.9,"Drama");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Becoming Jane","2007","Julian Jarrold",7.0,"Drama");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Inception","2010","Chistopher Nolan",8.8,"Acción");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Matrix","1999","Lana & Lily Wachowski",8.7,"Acción");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Predator","1987","John McTiernan",7.8,"Acción");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Kill Bill: Volume 1","2003","Quentin Tarantino",8.1,"Acción");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Mad Max","2015","George Miller",8.1,"Acción");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Lucy","2014","Luc Besson",6.4,"Acción");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("The Hunger Games","2012","Gary Ross",7.2,"Acción");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Jurassic Park","1993","Stephen Spielberg",8.1,"Acción");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("Harry Potter and the Sorcerer's Stone","2001","Chris Columbus",7.6,"Acción");
+INSERT INTO pelicula (nombre,fechaPublicacion,director,ranking,genero) VALUES ("The Dark Knight","2008","Christopher Nolan",9.0,"Acción");
+
+----Poblar Tabla Pregunta----
+
+INSERT INTO pregunta (pregunta,respuestaA, respuestaB, respuestaC, respuestaD) VALUES ( "Si te persigue un monstruo, ¿ Qué harías?"," 1) : ¿Lo enfrentas y peleas con él?", " 2) : ¿Te escondes y esperas? " ," 3) : ¿Tratas de hablar con el para entender sus motivaciones?", " 4) : ¿Lo enfrentas porque crees que todo es una broma?");
+INSERT INTO pregunta (pregunta,respuestaA, respuestaB, respuestaC, respuestaD) VALUES ("Si tuvieras superpoderes ¿Cuál de estos elegirías?"," 1): Leer la mente de las personas " ," 2) : Ser Invisible "," 3) : Tener Superfuerza ", " 4) : Ser multimillonario ");
+INSERT INTO pregunta (pregunta,respuestaA, respuestaB, respuestaC, respuestaD) VALUES ("De los siguientes generos ¿cuál prefieres?", " 1) : Terror", " 2) : Comedia"," 3) : Drama", " 4) : Acción" );
+INSERT INTO pregunta (pregunta,respuestaA, respuestaB, respuestaC, respuestaD) VALUES ("Encuentras a tu mejor amigue con tu novie. ¿Qué harías?"," 1): Planeas una venganza " ," 2) : Te ríes de la situación y te unes"," 3) : Das un portazo y te pones a llorar ", " 4) : Haces el viaje que siempre planeaste");
+
+----Poblar tabla Lista----
+
+INSERT INTO lista(idusuario) VALUES (1);
+INSERT INTO lista(idusuario) VALUES (3);
+
+----poblar tabla datoslista---
+
+INSERT INTO datoslista(pelicula_idpelicula,lista_idlista) VALUES (5,1);
+INSERT INTO datoslista(pelicula_idpelicula,lista_idlista) VALUES (1,1);
+INSERT INTO datoslista(pelicula_idpelicula,lista_idlista) VALUES (8,1);
+INSERT INTO datoslista(pelicula_idpelicula,lista_idlista) VALUES (3,1);
+
+----poblar tabla datoscuestionario---
+
+INSERT INTO datoscuestionario (idcuestionario, idpregunta) VALUES (1,1);
+INSERT INTO datoscuestionario (idcuestionario, idpregunta) VALUES (1,3);
+INSERT INTO datoscuestionario (idcuestionario, idpregunta) VALUES (1,2);
+
+
+
+
+------------------------------------------------------------------------------------
+
+						VISTAS
+						
+------------------------------------------------------------------------------------
+
+--- seleccionar peliculas que salieron despues del año 2000 ---		
+				
+CREATE VIEW 'seleccionar peliculas nuevas'
+SELECT nombre,fechaPublicacion,director,genero 
+FROM pelicula
+WHERE fechaPublicacion > 2000;
+
+--- seleccionar 4 peliculas aleatorias de terror ---
+
+CREATE VIEW `seleccionar pelicula terror` AS
+SELECT nombre,fechaPublicacion,director,ranking
+FROM pelicula
+WHERE genero = 'terror'
+ORDER BY RAND()
+LIMIT 4;
+
+--- seleccionar 4 peliculas aleatorias de drama ---
+
+CREATE VIEW `seleccionar pelicula drama` AS
+SELECT nombre,fechaPublicacion,director,ranking
+FROM pelicula
+WHERE genero = 'drama'
+ORDER BY RAND()
+LIMIT 4;
+
+--- seleccionar 4 peliculas aleatorias de comedia ---
+
+CREATE VIEW `seleccionar pelicula comedia` AS
+SELECT nombre,fechaPublicacion,director,ranking
+FROM pelicula
+WHERE genero = 'comedia'
+ORDER BY RAND()
+LIMIT 4;
+
+--- seleccionar 4 peliculas aleatorias de accion ---
+
+CREATE VIEW `seleccionar pelicula accion` AS
+SELECT nombre,fechaPublicacion,director,ranking
+FROM pelicula
+WHERE genero = 'accion'
+ORDER BY RAND()
+LIMIT 4;
+
+
+
+------------------------------------------------------------------------------------
+
+						PROCEDIMIENTOS
+						
+------------------------------------------------------------------------------------
+
+--- PROCEDIMIENTO PARA CREAR UN CUESTIONARIO ----
+
+DELIMITER $$ 
+CREATE PROCEDURE `crear cuestionario` (IN u_id INT)
+BEGIN
+	INSERT INTO cuestionario(idusuario) VALUES (u_id);
+END$$ 
+
+DELIMITER ; 
+
+--- LLAMAR PRODECIMIENTO ---
+
+CALL crear_cuestionario (1)
+
+
+
+--- PROCEDIMIENTO PARA MOSTRAR LISTA DE UN USUARIO ESPECIFICO ---
+
+CREATE PROCEDURE `mostrar_lista` 
+(
+	u_id INT
+)
+BEGIN
+	SELECT p.nombre, p.director, p.fechaPublicacion, p.ranking, p.genero
+    FROM pelicula as p, datoslista as d
+    WHERE d.lista_idlista = u_id AND p.idpelicula = d.pelicula_idpelicula;
+END
+
+--- llamar procedimiento ----
+
+CALL mostrar_lista (1)
+
+--- PROCEDIMIENTO PARA MOSTRAR TOTAL DE PELICULAS SEGÚN GENERO ---
+
+CREATE  PROCEDURE `mostrarTotalPeliculas`
+(
+	g varchar(10)
+)
+BEGIN
+	SELECT  COUNT(*) 
+	FROM pelicula
+	WHERE genero = g;
+END

@@ -1,0 +1,1 @@
+En esta clase empecé a realizar el modelo entidad relacion. Junto con investigar al respecto.

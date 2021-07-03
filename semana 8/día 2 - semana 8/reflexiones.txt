@@ -1,0 +1,2 @@
+En esta clase tratamos de instalar la base de datos oracle y sus complementos, la cual demoró mucho pero no la pude hacer funcionar.
+Por otro lado investigué sobre los modelos y otros programas para generar base de datos.

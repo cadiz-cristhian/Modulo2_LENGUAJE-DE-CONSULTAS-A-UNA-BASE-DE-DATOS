@@ -1,0 +1,4 @@
+En esta clase presentamos los avances para la presentación de la proxima semana.
+Debo actualizar las tablas según lo que sugirió el profesor, el cual me indicó que agregue fechas a las tablas
+de cuestionario y lista.
+Aparte investigué sobre Mysql
